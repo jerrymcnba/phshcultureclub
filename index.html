@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>上海话小词典</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff7f0;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #c0392b;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📍 上海话小词典</h1>
+
+<div class="card">
+  <h2>阿拉</h2>
+  <p>意思：我们</p>
+  <audio id="audio1" src="ala.mp3"></audio>
+  <button onclick="document.getElementById('audio1').play()">▶ 播放</button>
+</div>
+
+<div class="card">
+  <h2>侬好</h2>
+  <p>意思：你好</p>
+  <audio id="audio2" src="nonghao.mp3"></audio>
+  <button onclick="document.getElementById('audio2').play()">▶ 播放</button>
+</div>
+
+<p>上海文化社制作</p>
+
+</body>
+</html>
