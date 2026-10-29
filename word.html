@@ -1,35 +1,56 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf8f3">
-  <meta id="description-meta" name="description" content="Explore a Shanghainese word card with pronunciation and example sentence audio.">
-  <title>Listen to a Word | Shanghai Culture Club</title>
-  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="data/cards.js" defer></script>
-  <script src="assets/js/site.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf8f3">
+<meta id="description-meta" name="description" content="A student-led Shanghainese language and culture project at Pinghe School, featuring word cards, recordings and our story.">
+<title>Listen to a Word | Shanghai Culture Club</title>
+<link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/bilingual.css">
+<script src="data/cards.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
 </head>
-<body>
-  <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span>Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a>
-    <button class="menu-toggle" id="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu ☰</button>
-    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="cards.html" aria-current="page">Word Cards</a><a href="about.html">Our Story</a><a href="cards.html" class="nav-action">Start Exploring ↗</a></nav>
-  </div></header>
-  <main>
-    <section class="container" id="word-detail" aria-label="Selected word card">
-      <noscript><p>Enable JavaScript to display this card, or visit the <a href="cards.html">word-card index</a>.</p></noscript>
-    </section>
-    <section class="related-section" id="related-section"><div class="container">
-      <div class="section-heading"><div><div class="eyebrow">Keep listening</div><h2 class="section-title">More to discover.</h2></div><a class="text-link" href="cards.html">Browse all cards →</a></div>
-      <div id="related-cards" class="word-grid"></div>
-    </div></section>
-  </main>
-  <footer class="site-footer"><div class="container">
-    <div class="footer-grid"><div class="footer-about"><a class="brand footer-brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span>Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a><p>A student-led effort to make Shanghainese a little easier to see, hear, and share.</p></div><div class="footer-links"><div><a href="index.html">Home</a><a href="cards.html">Word Cards</a></div><div><a href="about.html">Our Story</a><a href="https://github.com/jerrymcnba/phshcultureclub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
-    <div class="footer-bottom">© <span id="copyright-year">2026</span> Shanghai Culture Club · A school culture project · Made with curiosity in Shanghai.</div>
-  </div></footer>
-  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+<body class="word-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Shanghai Culture Club home">
+      <img class="brand-icon" src="assets/mark.svg" alt="">
+      <span data-i18n="brandName">Shanghai Culture Club <small class="brand-sub">上海文化社</small></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-controls="primary-nav" aria-expanded="false" data-i18n="menu">Menu ☰</button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="index.html"  data-i18n="navHome">Home</a>
+      <a href="cards.html" aria-current="page" data-i18n="navCards">Word Cards</a>
+      <a href="about.html"  data-i18n="navStory">Our Story</a>
+      <div class="language-switch" role="group" aria-label="Choose website language">
+        <button type="button" data-lang="zh" aria-label="切换为中文" aria-pressed="false">中文</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="en" aria-label="Switch to English" aria-pressed="true">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="container" id="word-detail" aria-label="Selected word card">
+  <noscript><p>Enable JavaScript to display this card, or visit the <a href="cards.html">word-card index</a>.</p></noscript>
+</section>
+<section class="related-section" id="related-section"><div class="container">
+  <div class="section-heading"><div><div class="eyebrow" data-i18n="relatedEyebrow">Keep listening</div><h2 class="section-title" data-i18n="relatedTitle">More to discover.</h2></div><a class="text-link" href="cards.html" data-i18n="relatedLink">Browse all cards →</a></div>
+  <div id="related-cards" class="word-grid"></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+  <div class="footer-about"><a class="brand footer-brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span data-i18n="brandName">Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a>
+    <p data-i18n="footerAbout">A student-led effort to make Shanghainese a little easier to see, hear, and share.</p></div>
+  <div class="footer-links"><div><a href="index.html" data-i18n="navHome">Home</a><a href="cards.html" data-i18n="navCards">Word Cards</a></div><div><a href="about.html" data-i18n="navStory">Our Story</a><a href="https://github.com/jerrymcnba/phshcultureclub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+</div>
+<div class="footer-bottom">© <span id="copyright-year">2026</span> <span data-i18n="footerBottom">Shanghai Culture Club · A school culture project · Made with curiosity in Shanghai.</span></div>
+</div></footer>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
