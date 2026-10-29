@@ -1,0 +1,93 @@
+/* Additional styles only: original style.css remains unchanged. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  border-left: 1px solid var(--border);
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.language-switch button {
+  padding: 5px 2px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 2px;
+  font-weight: 650;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.language-switch button:hover,
+.language-switch button[aria-pressed="true"] {
+  color: var(--red);
+}
+.language-switch button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+/* The homepage is deliberately minimal. */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.home-page main { flex: 1; display: flex; }
+.minimal-home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(760px, calc(100vh - 83px));
+  background: radial-gradient(ellipse at 50% 46%, #fffdfa 0%, #faf8f3 64%, #f4efe5 100%);
+}
+.home-center { text-align: center; padding-top: 80px; padding-bottom: 110px; }
+.home-ornament { display: flex; justify-content: center; align-items: center; gap: 17px; color: var(--red); }
+.ornament-line { display: block; width: 40px; height: 1px; background: #d2bcb2; }
+.ornament-character { font-family: "Noto Serif SC", "Songti SC", "SimSun", serif; font-size: 22px; }
+.home-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6.3vw, 88px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.15;
+  margin: 28px auto 40px;
+  max-width: 900px;
+}
+html[lang="zh-CN"] .home-title,
+html[lang="zh-CN"] .about-intro h1,
+html[lang="zh-CN"] .section-title,
+html[lang="zh-CN"] .page-intro h1 {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+  letter-spacing: .025em;
+}
+html[lang="zh-CN"] .home-title {
+  font-size: clamp(40px, 6.2vw, 80px);
+  line-height: 1.3;
+  font-weight: 600;
+}
+.home-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.home-actions .button { min-width: 158px; min-height: 52px; }
+@media (max-width: 800px) {
+  .language-switch { border-left: 0; border-top: 1px solid var(--border); padding: 12px 0 0; width: 100%; }
+  .minimal-home { min-height: calc(100svh - 82px); }
+  .home-center { padding-block: 64px 100px; }
+}
+@media (max-width: 480px) {
+  .home-title { font-size: 42px; }
+  .home-actions { gap: 10px; }
+  .home-actions .button { min-width: 142px; }
+}
