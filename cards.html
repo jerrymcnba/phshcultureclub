@@ -1,44 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf8f3">
-  <meta name="description" content="Browse illustrated Shanghainese word cards, listen to word pronunciations and example sentences, and discover familiar school spaces in a different voice.">
-  <title>Word Cards | Shanghai Culture Club</title>
-  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="data/cards.js" defer></script>
-  <script src="assets/js/site.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf8f3">
+<meta name="description" content="A student-led Shanghainese language and culture project at Pinghe School, featuring word cards, recordings and our story.">
+<title>Word Cards | Shanghai Culture Club</title>
+<link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/bilingual.css">
+<script src="data/cards.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
 </head>
-<body>
-  <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span>Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a>
-    <button class="menu-toggle" id="menu-toggle" aria-controls="primary-nav" aria-expanded="false">Menu ☰</button>
-    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="cards.html" aria-current="page">Word Cards</a><a href="about.html">Our Story</a><a href="cards.html" class="nav-action">Start Exploring ↗</a></nav>
-  </div></header>
-  <main>
-    <section class="container page-intro">
-      <div class="eyebrow">The collection / 词语卡片</div>
-      <h1>Words from our everyday.</h1>
-      <p>What does a place sound like in Shanghainese? Explore the audio-enabled word cards from our campus project. Choose a topic or search in English or Chinese, then open a card to hear the word and a sample sentence.</p>
-    </section>
-    <section class="container catalog-wrap" aria-label="Browse word cards">
-      <div class="catalog-toolbar">
-        <label for="card-search" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Search word cards</label>
-        <input class="search-field" id="card-search" type="search" placeholder="Search in English or 中文…" autocomplete="off">
-        <div id="result-count" class="results-meta" role="status" aria-live="polite">Loading word cards…</div>
+<body class="cards-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Shanghai Culture Club home">
+      <img class="brand-icon" src="assets/mark.svg" alt="">
+      <span data-i18n="brandName">Shanghai Culture Club <small class="brand-sub">上海文化社</small></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-controls="primary-nav" aria-expanded="false" data-i18n="menu">Menu ☰</button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="index.html"  data-i18n="navHome">Home</a>
+      <a href="cards.html" aria-current="page" data-i18n="navCards">Word Cards</a>
+      <a href="about.html"  data-i18n="navStory">Our Story</a>
+      <div class="language-switch" role="group" aria-label="Choose website language">
+        <button type="button" data-lang="zh" aria-label="切换为中文" aria-pressed="false">中文</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="en" aria-label="Switch to English" aria-pressed="true">EN</button>
       </div>
-      <div class="filters" id="category-filters" role="group" aria-label="Filter by category"></div>
-      <div class="word-grid" id="catalog-grid"></div>
-      <div class="empty-state" id="empty-state" hidden><p>No word cards match your search.</p><p>Try another word or select “All cards”.</p></div>
-      <noscript><p>JavaScript is required for search and browsing. You can still see the <a href="audio1/">original word cards</a>.</p></noscript>
-    </section>
-  </main>
-  <footer class="site-footer"><div class="container">
-    <div class="footer-grid"><div class="footer-about"><a class="brand footer-brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span>Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a><p>A student-led effort to make Shanghainese a little easier to see, hear, and share.</p></div><div class="footer-links"><div><a href="index.html">Home</a><a href="cards.html">Word Cards</a></div><div><a href="about.html">Our Story</a><a href="https://github.com/jerrymcnba/phshcultureclub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
-    <div class="footer-bottom">© <span id="copyright-year">2026</span> Shanghai Culture Club · A school culture project · Made with curiosity in Shanghai.</div>
-  </div></footer>
-  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="container page-intro">
+  <div class="eyebrow" data-i18n="cardsEyebrow">The collection / 词语卡片</div>
+  <h1 data-i18n="cardsTitle">Words from our everyday.</h1>
+  <p data-i18n="cardsIntro">What does a place sound like in Shanghainese? Explore the audio-enabled word cards from our campus project. Choose a topic or search in English or Chinese, then open a card to hear the word and a sample sentence.</p>
+</section>
+<section class="container catalog-wrap" aria-label="Browse word cards">
+  <div class="catalog-toolbar">
+    <label for="card-search" class="visually-hidden" data-i18n="searchLabel">Search word cards</label>
+    <input class="search-field" id="card-search" type="search" placeholder="Search in English or 中文…" autocomplete="off">
+    <div id="result-count" class="results-meta" role="status" aria-live="polite">Loading word cards…</div>
+  </div>
+  <div class="filters" id="category-filters" role="group" aria-label="Filter by category"></div>
+  <div class="word-grid" id="catalog-grid"></div>
+  <div class="empty-state" id="empty-state" hidden><p data-i18n="empty1">No word cards match your search.</p><p data-i18n="empty2">Try another word or select “All cards”.</p></div>
+  <noscript><p>JavaScript is required for search and browsing. You can still see the <a href="audio1/">original word cards</a>.</p></noscript>
+</section>
+</main>
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+  <div class="footer-about"><a class="brand footer-brand" href="index.html"><img class="brand-icon" src="assets/mark.svg" alt=""><span data-i18n="brandName">Shanghai Culture Club<small class="brand-sub">上海文化社</small></span></a>
+    <p data-i18n="footerAbout">A student-led effort to make Shanghainese a little easier to see, hear, and share.</p></div>
+  <div class="footer-links"><div><a href="index.html" data-i18n="navHome">Home</a><a href="cards.html" data-i18n="navCards">Word Cards</a></div><div><a href="about.html" data-i18n="navStory">Our Story</a><a href="https://github.com/jerrymcnba/phshcultureclub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+</div>
+<div class="footer-bottom">© <span id="copyright-year">2026</span> <span data-i18n="footerBottom">Shanghai Culture Club · A school culture project · Made with curiosity in Shanghai.</span></div>
+</div></footer>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
