@@ -1,9 +1,4 @@
-/*
- * Shanghai Culture Club — bilingual content.
- * 修改网页文案：在下面的 en（英文）和 zh（中文）两组中修改对应文字即可。
- * Change website copy in the en / zh dictionaries below.
- * Word-card vocabulary and audio stay in data/cards.js (unchanged).
- */
+
 (() => {
   'use strict';
 
